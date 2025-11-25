@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مؤشر التداول الذكي — إشارات آنية</title>
+  <meta name="description" content="مؤشر تداول رقمي يعطي إشارات دخول/خروج دقيقة ويُرسل التنبيهات في التليجرام. ضمان 14 يوم ودعم 24/7.">
+  <style>
+    :root{
+      --bg:#000000;
+      --panel:#0d0d10;
+      --purple-1:#9b59ff;
+      --purple-2:#7a3cf0;
+      --muted:#97a0a8;
+      --white:#f5f6f8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      font-family: "Inter", "Segoe UI", Tahoma, "Noto Kufi Arabic", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#070707);color:var(--white);-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:12px 0;}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:52px;height:52px;border-radius:12px;border:2px solid rgba(122,60,240,0.12);object-fit:contain;filter:drop-shadow(0 10px 30px rgba(122,60,240,0.08));}
+    .brand h3{margin:0;font-size:18px;letter-spacing:0.2px}
+    .nav a{margin-left:14px;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);font-size:14px;color:var(--muted)}
+    /* HERO */
+    .hero{margin-top:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:18px;padding:28px;display:grid;grid-template-columns:310px 1fr;gap:22px;align-items:center}
+    .hero-left{display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center}
+    .logo-circle{width:260px;height:260px;border-radius:50%;background:linear-gradient(180deg, rgba(122,60,240,0.06), rgba(122,60,240,0.02));display:flex;align-items:center;justify-content:center;border:4px solid rgba(122,60,240,0.08)}
+    .logo-circle img{width:56%;height:56%;object-fit:contain;filter:drop-shadow(0 12px 30px rgba(122,60,240,0.18))}
+    .hero-right h1{margin:0;font-size:32px;line-height:1.02}
+    .accent{color:var(--purple-1)}
+    .subtitle{color:var(--muted);margin-top:8px;font-size:15px}
+    .cta-row{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:linear-gradient(90deg,var(--purple-1),var(--purple-2));padding:12px 18px;border-radius:12px;border:0;color:#fff;font-weight:700;box-shadow:0 10px 30px rgba(122,60,240,0.14)}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);font-weight:600}
+    .kpis{display:flex;gap:12px;margin-top:16px}
+    .kpi{background:var(--glass);padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:700}
+    /* sections */
+    .section{margin-top:20px;padding:18px;border-radius:12px;background:transparent}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+    .feature{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:14px;border-radius:12px}
+    .feature h4{margin:0 0 8px;color:var(--purple-1)}
+    .video{height:280px;background:#020202;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px}
+    .price-big{font-size:38px;color:var(--purple-1);font-weight:900}
+    .small{color:var(--muted);font-size:13px}
+    .testimonials{display:flex;flex-direction:column;gap:10px}
+    .testimonial{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:30px}
+    /* responsive */
+    @media(max-width:960px){
+      .hero{grid-template-columns:1fr;align-items:start}
+      .two-col{grid-template-columns:1fr}
+      .logo-circle{width:200px;height:200px}
+    }
+    @media(max-width:420px){
+      .logo-circle{width:160px;height:160px}
+      .hero-right h1{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- header -->
+    <header>
+      <div class="brand">
+        <img src="/mnt/data/IMG_6A98BE57-8B09-4040-9405-C69627B3FA5B.jpeg" alt="logo">
+        <div>
+          <h3>مؤشر التداول الذكي</h3>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">إشارات رقمية — دعم عبر التليجرام</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#details">المزايا</a>
+        <a href="#demo">عرض</a>
+        <a href="#price">الأسعار</a>
+      </nav>
+    </header>
+
+    <!-- hero -->
+    <section class="hero" aria-label="hero">
+      <div class="hero-left">
+        <div class="logo-circle" aria-hidden="true">
+          <img src="/mnt/data/IMG_6A98BE57-8B09-4040-9405-C69627B3FA5B.jpeg" alt="logo">
+        </div>
+        <div style="text-align:center;color:var(--muted);font-weight:700">ضمان استرجاع خلال 14 يوم • دعم 24/7</div>
+      </div>
+
+      <div class="hero-right">
+        <h1>تداول <span class="accent">بوضوح</span> — إشارات آنية للقرار الصحيح</h1>
+        <p class="subtitle">مؤشر ذكي مصمّم لتحليل السوق وإعطاء نقاط دخول وخروج واضحة مع مقترحات وقف خسارة وأهداف. مناسب للمبتدئين والمحترفين على حد سواء.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="https://t.me/your_bot_here" target="_blank" rel="noopener">تواصل مع البوت للشراء</a>
+          <a class="btn secondary" href="#demo">شاهد العرض التوضيحي</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">✅ إشارات آنية</div>
+          <div class="kpi">⚡ تحديث 24/7</div>
+          <div class="kpi">🔒 ضمان 14 يوم</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- features -->
+    <section id="details" class="section">
+      <h2 style="margin:0 0 12px">مزايا المؤشر</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>إشارات واضحة وقابلة للتنفيذ</h4>
+          <div class="small">نقاط دخول وخروج مقترحة مع مستوى مخاطرة واضح لتسهيل اتخاذ القرار.</div>
+        </div>
+        <div class="feature">
+          <h4>ثلاثة أوضاع جاهزة</h4>
+          <div class="small">محافظ — متوازن — هجومي. اختر الإعداد الذي يناسب أسلوبك.</div>
+        </div>
+        <div class="feature">
+          <h4>تنبيهات التليجرام</h4>
+          <div class="small">تصل الإشارات فورًا إلى بوتك في التليجرام لتستلمها على هاتفك مباشرة.</div>
+        </div>
+        <div class="feature">
+          <h4>تعليمات ربط سهلة</h4>
+          <div class="small">ملف إعداد خطوة بخطوة + فيديو توضيحي للربط على منصتك.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- demo + price column -->
+    <section class="section two-col" id="demo">
+      <div>
+        <h2 style="margin:0 0 10px">عرض سريع</h2>
+        <div class="video card">هنا ضع فيديو توضيحي (MP4/GIF) أو صور شاشة من المؤشر</div>
+
+        <div style="margin-top:16px" class="card">
+          <h3 style="margin:0 0 8px">كيفية العمل</h3>
+          <ol style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>اشترك وادفع عبر البوت أو رابط الدفع.</li>
+            <li>تستلم ملف الإعداد وتعليمات الربط عبر التليجرام.</li>
+            <li>ابدأ باستلام الإشارات فورًا وتابع الأداء.</li>
+          </ol>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h3 style="margin:0 0 6px">احصل على المؤشر الآن</h3>
+              <div class="small">دفع آمن واستلام فوري بعد التأكيد</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="price-big">100$</div>
+            <div class="small" style="margin-top:6px">يشمل: ملف الإعداد + فيديو ارتباط + دعم إعداد أولي</div>
+            <div style="margin-top:12px">
+              <a class="btn" href="https://t.me/your_bot_here" target="_blank" rel="noopener">اشتري عبر البوت</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4 style="margin:0 0 8px">آراء المستخدمين</h4>
+          <div class="testimonials">
+            <div class="testimonial">"الإشارات واضحة وسهلة التطبيق — النتائج تحسنت." — علي</div>
+            <div class="testimonial">"الدعم ساعدني في الربط بسرعة." — فاطمة</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- faq -->
+    <section class="section">
+      <h2 style="margin:0 0 12px">أسئلة شائعة</h2>
+      <div class="card">
+        <strong>هل يوجد ضمان استرجاع؟</strong>
+        <p class="small" style="margin:6px 0 0">نعم — ضمان استرجاع خلال 14 يومًا في حال لم يكن المنتج مطابقًا للوصف.</p>
+      </div>
+      <div class="card" style="margin-top:8px">
+        <strong>هل أضمن أرباحاً؟</strong>
+        <p class="small" style="margin:6px 0 0">لا يمكن ضمان أرباح ثابتة — المؤشر يقدم إشارات مبنية على تحليل؛ إدارة رأس المال لا تزال ضرورية.</p>
+      </div>
+    </section>
+
+    <footer>
+      © جميع الحقوق محفوظة • دعم 24/7 عبر التليجرام — اضغط "اشتري عبر البوت" للتواصل
+    </footer>
+
+  </div>
+</body>
+</html>
