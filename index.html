@@ -41,20 +41,13 @@
     .kpi{background:var(--glass);padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:700}
 
     .section{margin-top:20px;padding:18px;border-radius:12px;background:transparent}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .feature{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:16px;border-radius:12px}
-    .feature h4{margin:0 0 8px;color:var(--purple-1)}
-    .video{height:300px;background:#020202;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
-
     .two-col{display:grid;grid-template-columns:1fr 380px;gap:18px}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px}
     .price-big{font-size:44px;color:var(--purple-1);font-weight:900}
     .small{color:var(--muted);font-size:13px}
-    .testimonials{display:flex;flex-direction:column;gap:10px}
-    .testimonial{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
-    .badge{background:linear-gradient(90deg,var(--purple-1),var(--purple-2));padding:6px 10px;border-radius:8px;font-weight:800}
     .files-list{list-style:none;padding:0;margin:8px 0}
     .files-list li{margin:6px 0;padding:8px;background:rgba(255,255,255,0.02);border-radius:8px}
+    .video{height:300px;background:#020202;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
 
     footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:30px}
 
@@ -86,7 +79,7 @@
         <div class="logo-circle" aria-hidden="true">
           <img src="/mnt/data/IMG_6A98BE57-8B09-4040-9405-C69627B3FA5B.jpeg" alt="logo">
         </div>
-        <div style="text-align:center;color:var(--muted);font-weight:700">دعم كامل للربط + ملفات جاهزة للتنزيل بعد الشراء</div>
+        <div style="text-align:center;color:var(--muted);font-weight:700">دعم كامل للربط + ملفات جاهزة للتنزيل بعد الشراء — يعمل على الهاتف والحاسوب</div>
       </div>
 
       <div class="hero-right">
@@ -113,7 +106,7 @@
           <p class="small">عند تأكيد الدفع سنتيح لك فوراً ملفات المنتج وروابط التحميل بالإضافة إلى دعم الربط خطوة بخطوة.</p>
 
           <ul class="files-list">
-            <li><strong>ملف المؤشر (Indicator File)</strong> — ملف قابل للتحميل على منصة tradingview.</li>
+            <li><strong>ملف المؤشر (Indicator File)</strong> — ملف قابل للتثبيت على منصة TradingViews.</li>
             <li><strong>دليل الإعداد (Setup Guide)</strong> — خطوات ربط المؤشر وتلقي الإشارات.</li>
             <li><strong>ملف إدارة رأس المال</strong> — خطة جاهزة لإدارة اللوت والمخاطر.</li>
             <li><strong>دليل إدارة المخاطر</strong> — قواعد واضحة لحماية رأس المال.</li>
@@ -162,13 +155,38 @@
       </div>
     </section>
 
-    <section id="demo" class="section">
-      <h2 style="margin:0 0 12px">عرض توضيحي سريع</h2>
-      <div class="video card">ضع هنا فيديو توضيحي أو صور نتائج البوت (MP4/GIF أو صور شاشة)</div>
+    <!-- قسم العرض التوضيحي مع الفيديو والصور --><section id="demo" class="section">
+  <h2 style="margin:0 0 12px">عرض توضيحي سريع</h2>
+  
+  <!-- الفيديو التوضيحي -->
+  <div class="video card" id="video-main">
+    <video width="100%" height="100%" controls>
+      <source src="22.11.2025_01.51.33_REC.mp4" type="video/mp4">
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+
+  <!-- الصور -->
+  <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+    <!-- صورة شراء -->
+    <div style="flex:1 1 200px">
+      <img src="photo_2025-11-25_02-05-17.jpg" alt="صفقة شراء" style="width:100%;border-radius:10px">
+      <div style="text-align:center;color:var(--muted);font-size:12px;margin-top:4px">شراء</div>
+    </div>
+
+    <!-- صورة بيع -->
+    <div style="flex:1 1 200px">
+      <img src="photo_2025-11-25_02-05-46.jpg" alt="صفقة بيع" style="width:100%;border-radius:10px">
+      <div style="text-align:center;color:var(--muted);font-size:12px;margin-top:4px">بيع</div>
+    </div>
+  </div>
+</section>
 
       <div style="margin-top:12px" class="card">
         <h4 style="margin:0 0 8px">كيف تستلم الإشارات؟</h4>
-        <div class="small">يمكنك استلام الإشارات عبر ربط المؤشر بمنصة التداول المدعومة أو عبر إشعارات التليجرام (بوت خاص سيرسل الصفقات تلقائياً عند تحقق الإشارة).</div>
+        <div class="small">
+          يمكنك استلام الإشارات عبر ربط المؤشر بمنصة TradingViews أو عبر إشعارات التليجرام (بوت خاص سيرسل الصفقات تلقائياً عند تحقق الإشارة).
+        </div>
       </div>
     </section>
 
@@ -192,7 +210,7 @@
 
       <div class="card" style="margin-top:8px">
         <strong>هل أحتاج حساب Binance للتحقق من الدفع؟</strong>
-        <p class="small" style="margin:6px 0 0">نفضل استخدام روابط دفع جاهزة (Payhip / Stripe / Binance Pay) بحيث يكون التحقق آليًا ويصلك المنتج فورًا. إذا اخترت التحويل اليدوي، سيُطلب منك TXID وسيتم التحقق يدوياً قبل التسليم.</p>
+        <p class="small" style="margin:6px 0 0">الدفع يتم تلقائياً عبر منصة binance — يصل المنتج فوراً بعد الدفع.</p>
       </div>
 
       <div class="card" style="margin-top:8px">
@@ -204,7 +222,7 @@
     <section class="section">
       <h2 style="margin:0 0 12px">دليل سريع للعرض والنتائج</h2>
       <div class="card">
-        <p class="small">هل تضع صور نتائج البوت؟ نعم، إن كانت لديك نتائج حقيقية أو لقطات شاشة من المستخدمين، أضفها — لكن تجنّبي أي نتائج مزيفة. إن لم تكن النتائج متاحة، ضع فيديو توضيحي لكيفية العمل أو لقطة شاشة من الاختبارات الخلفية (backtest) مع تواريخ وتفاصيل واضحة.</p>
+        <p class="small">يمكنك إضافة الفيديو والصور مباشرة داخل العرض التوضيحي — يعمل على الهاتف والحاسوب. تجنّبي أي نتائج مزيفة، وأظهري الصور والفيديوهات الحقيقية للنتائج.</p>
       </div>
     </section>
 
@@ -216,5 +234,3 @@
 </body>
 </html>
 
-
-      
